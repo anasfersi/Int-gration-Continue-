@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/nadejeT/mavenjenkins'
+                git 'https://github.com/anasfersi/Integration-continue'
             }
         }
         stage('Build') {
