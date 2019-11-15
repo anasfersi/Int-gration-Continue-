@@ -1,25 +1,22 @@
 pipeline {
     agent any
-    tools { 
-        maven 'Maven' 
-    }
     stages {
-        stage('Checkout') {
+        stage('CHECKOUT') {
             steps {
                 git 'https://github.com/anasfersi/Integration-continue'
             }
         }
-        stage('Build') {
+        stage('BUILD') {
             steps {
                bat label: '', script: 'mvn install'
    }
         }
-        stage('Test') {
+        stage('TEST') {
             steps {
                 bat label: '', script: 'mvn test'
             }
         }
-        stage('Deploy') {
+        stage('DEPLOY') {
             steps {
                 echo 'Deploying....'
             }
