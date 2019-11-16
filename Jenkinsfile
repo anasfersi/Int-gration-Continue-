@@ -24,7 +24,8 @@ pipeline {
     }
     post {
         always {
-              emailext body: '$DEFAULT_CONTENT',
+              emailext attachLog: true, 
+                        body: '$DEFAULT_CONTENT',
                         recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                         subject: '$DEFAULT_SUBJECT'
             
